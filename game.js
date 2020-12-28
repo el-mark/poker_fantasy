@@ -21,30 +21,29 @@ let myAge = 18;
 
 // console.log(Array.from(Array(52)));
 const emptyArray = Array.from(Array(52))
-let shuffleDeck = emptyArray.map((element, index) => index + 1 )
+let shuffledDeck = emptyArray.map((element, index) => index + 1 )
 
-function shuffle(array) {
-    var currentIndex = array.length;
+function shuffle(deck) {
+    var currentIndex = deck.length;
     var temporaryValue;
     var randomIndex;
   
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
   
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+    
+        // And swap it with the current element.
+        temporaryValue = deck[currentIndex];
+        deck[currentIndex] = deck[randomIndex];
+        deck[randomIndex] = temporaryValue;
     }
-  
-    return array;
-  }
-  
-  // Used like so
-  var arr = [2, 11, 37, 42];
-  shuffle(arr);
-  console.log(arr);
+
+    return deck;
+}
+
+// Used like so
+shuffle(shuffledDeck);
+console.log(shuffledDeck);
